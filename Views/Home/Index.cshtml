@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DatabaseFirstApp.Models.EmployeeTable>
+
+<h1>****Employee  Management System****</h1>
+
+@Html.Raw(TempData["insert"])
+@Html.Raw(TempData["update"])
+@Html.Raw(TempData["delete"])
+
+
+@Html.ActionLink("Add New Emplyee", "Create")
+<table bgcolor="aquagreen" class="table-bordered">
+    <tr>
+        <th>empId</th>
+        <th>empName</th>
+        <th>empAdd</th>
+        <th>empAge</th>
+        <th>empSalary</th>
+        <th>edit</th>
+        <th>delete</th>
+        <th>details</th>
+    </tr>
+    @foreach (var ep in Model)
+    {
+        <tr>
+            <td>@ep.EmpId</td>
+            <td>@ep.EmpName</td>
+            <td>@ep.EmpAdd</td>
+            <td>@ep.EmpAge</td>
+            <td>@ep.EmpSal</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = ep.EmpId })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = ep.EmpId })</td>
+            <td>@Html.ActionLink("Details", "Details", new { id = ep.EmpId })</td>
+        </tr>
+    }
+</table>
+

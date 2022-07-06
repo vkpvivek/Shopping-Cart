@@ -1,0 +1,26 @@
+﻿@model DatabaseFirstApp.Models.EmployeeTable
+
+<h2>@Html.ActionLink("Back to Home Page", "Index")</h2>
+<form method="post" asp-controller="Home" asp-action="Create">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" asp-for="@Model.EmpName" /></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" asp-for="@Model.EmpAge" /></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" asp-for="@Model.EmpAdd" /></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" asp-for="@Model.EmpSal" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Create" /></td>
+        </tr>
+    </table>
+</form>
